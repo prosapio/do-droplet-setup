@@ -4,7 +4,7 @@ set -euo pipefail
 USERNAME=sysadmin # TODO: Customize the sudo non-root username here
 
 # Create user and immediately expire password to force a change on login
-adduser --create-home --shell "/bin/bash" --groups sudo "${USERNAME}"
+adduser --create-home --shell "/bin/bash" --groups wheel "${USERNAME}"
 passwd --delete "${USERNAME}"
 chage --lastday 0 "${USERNAME}"
 
